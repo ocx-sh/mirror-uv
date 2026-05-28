@@ -25,7 +25,12 @@ assets:
 
 asset_type:
   type: archive
-  strip_components: 1
+  strip_components:
+    default: 1
+    platforms:
+      # uv-*-pc-windows-msvc.zip ships uv.exe + uvx.exe flat at root.
+      windows/amd64: 0
+      windows/arm64: 0
 
 metadata:
   default: metadata.json
